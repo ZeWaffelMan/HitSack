@@ -6,6 +6,7 @@ public class Smacking : MonoBehaviour
 {
     public float fieldofImpact;
     public float force;
+    public static bool hit = false;
 
     public LayerMask layerToHit;
 
@@ -31,7 +32,6 @@ public class Smacking : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 v = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -42,9 +42,18 @@ public class Smacking : MonoBehaviour
                 {
                     Debug.Log("Slap");
                     Impact();
+                    StopCoroutine(Wait());
+                    StartCoroutine(Wait());
                 }
             }
         }
+    }
+
+    IEnumerator Wait()
+    {
+        hit = true;
+        yield return new WaitForSeconds(0.3f);
+        hit = false;
     }
 
     private void OnDrawGizmos()
