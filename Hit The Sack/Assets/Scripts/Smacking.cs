@@ -42,7 +42,6 @@ public class Smacking : MonoBehaviour
                 {
                     Debug.Log("Slap");
                     Impact();
-                    StopCoroutine(Wait());
                     StartCoroutine(Wait());
                 }
             }
