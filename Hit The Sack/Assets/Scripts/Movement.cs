@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour
     Rigidbody2D leftLegRB;
     Rigidbody2D rightLegRB;
 
+    public static bool canThrow = false;
+
     public Animator animator;
 
     [SerializeField] float speed = 1.5f;
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            StartCoroutine(Throw());
             animator.Play("Idle");
         }
     }
@@ -52,5 +55,11 @@ public class Movement : MonoBehaviour
         rightLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
         leftLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
+    }
+
+    IEnumerator Throw()
+    {
+        yield return new WaitForSeconds(1);
+        canThrow = true;
     }
 }

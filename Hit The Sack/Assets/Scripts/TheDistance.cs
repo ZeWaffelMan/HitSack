@@ -5,7 +5,7 @@ using UnityEngine;
 public class TheDistance : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    public static float distance;
+    public static float distance = 10;
 
     private void Update()
     {
