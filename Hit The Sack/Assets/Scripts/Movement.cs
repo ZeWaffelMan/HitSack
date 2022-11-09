@@ -22,24 +22,24 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") != 0)
+        Debug.Log(TheDistance.distance);
+
+        if (TheDistance.distance > 6.5)
         {
-            if (Input.GetAxisRaw("Horizontal") > 0)
-            {
-                animator.Play("Walk Right");
-                StartCoroutine(MoveRight(stepWait));
-            }
-            else
-            {
-                animator.Play("Walk Left");
-                StartCoroutine(MoveLeft(stepWait));
-            }
+            animator.Play("Walk Right");
+            StartCoroutine(MoveRight(stepWait));
+        }
+        else if (TheDistance.distance < -6.5)
+        {
+            animator.Play("Walk Left");
+            StartCoroutine(MoveLeft(stepWait));
         }
         else
         {
             animator.Play("Idle");
         }
     }
+
     IEnumerator MoveRight(float seconds)
     {
         leftLegRB.AddForce(Vector2.right * (speed * 1000) * Time.deltaTime);
