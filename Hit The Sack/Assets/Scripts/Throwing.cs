@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Throwing : MonoBehaviour
 {
-    public bool isAbleToThrow = false;
-
     private void Update()
     {
         if (Movement.canThrow == true)
         {
-            foreach (Transform eachChild in transform)
+            foreach (Transform child in transform)
             {
-                if (eachChild)
+                if (child)
                 {
-                    Debug.Log("Child found. Mame: " + eachChild.name);
-                    eachChild.transform.SetParent(null);
+                    child.transform.SetParent(null);
+                    child.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 }
             }
         }

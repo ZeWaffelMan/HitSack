@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class CrabMovement : MonoBehaviour
 {
     public GameObject leftLeg;
     public GameObject rightLeg;
@@ -28,22 +28,22 @@ public class Movement : MonoBehaviour
         Debug.Log(TheDistance.distance);
         if (TheDistance.distance > 6)
         {
-            animator.Play("Walk Right");
+            animator.Play("CrabWalkRight");
             StartCoroutine(MoveRight(stepWait));
         }
         else if (TheDistance.distance < -6)
         {
-            animator.Play("Walk Left");
+            animator.Play("CrabWalkLeft");
             StartCoroutine(MoveLeft(stepWait));
         }
         else if (canThrow == false)
         {
             StartCoroutine(Throw());
-            animator.Play("Idle");
+            animator.Play("IdleCrab");
         }
         else
         {
-            animator.Play("Idle");
+            animator.Play("IdleCrab");
         }
     }
 

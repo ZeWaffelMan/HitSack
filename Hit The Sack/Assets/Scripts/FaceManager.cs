@@ -12,7 +12,6 @@ public class FaceManager : MonoBehaviour
     private void Awake()
     {
         smacking = GameObject.Find("MouseManager").GetComponent<Smacking>();
-        facesIndex = 0;
     }
 
     private void Update()

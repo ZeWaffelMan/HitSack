@@ -42,13 +42,12 @@ public class Smacking : MonoBehaviour
                 {
                     Debug.Log("Slap");
                     Impact();
-                    StartCoroutine(Wait());
+                    StartCoroutine(Switch());
                 }
             }
         }
     }
-
-    IEnumerator Wait()
+    IEnumerator Switch()
     {
         hit = true;
         yield return new WaitForSeconds(0.3f);

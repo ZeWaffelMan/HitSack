@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Climbing : MonoBehaviour
 {
-    public GameObject leftLeg;
-    public GameObject rightLeg;
-    Rigidbody2D leftLegRB;
-    Rigidbody2D rightLegRB;
+    public GameObject leftArm;
+    public GameObject rightArm;
+    Rigidbody2D leftArmRB;
+    Rigidbody2D rightArmRB;
 
     public static bool canThrow = false;
 
@@ -18,27 +18,27 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        leftLegRB = leftLeg.GetComponent<Rigidbody2D>();
-        rightLegRB = rightLeg.GetComponent<Rigidbody2D>();
+        leftArmRB = leftArm.GetComponent<Rigidbody2D>();
+        rightArmRB = rightArm.GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         //Run Towards
         Debug.Log(TheDistance.distance);
-        if (TheDistance.distance > 6)
+        if (TheDistance.distance > 4)
         {
-            animator.Play("Walk Right");
+            animator.Play("ClimbRight");
             StartCoroutine(MoveRight(stepWait));
         }
-        else if (TheDistance.distance < -6)
+        else if (TheDistance.distance < -4)
         {
-            animator.Play("Walk Left");
+            animator.Play("ClimbLeft");
             StartCoroutine(MoveLeft(stepWait));
         }
         else if (canThrow == false)
         {
-            StartCoroutine(Throw());
+            StartCoroutine(BlowUp());
             animator.Play("Idle");
         }
         else
@@ -49,19 +49,19 @@ public class Movement : MonoBehaviour
 
     IEnumerator MoveRight(float seconds)
     {
-        leftLegRB.AddForce(Vector2.right * (speed * 1000) * Time.deltaTime);
+        leftArmRB.AddForce(Vector2.right * (speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
-        rightLegRB.AddForce(Vector2.right * (speed * 1000) * Time.deltaTime);
+        rightArmRB.AddForce(Vector2.right * (speed * 1000) * Time.deltaTime);
     }
 
     IEnumerator MoveLeft(float seconds)
     {
-        rightLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
+        rightArmRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
-        leftLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
+        leftArmRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
     }
 
-    IEnumerator Throw()
+    IEnumerator BlowUp()
     {
         yield return new WaitForSeconds(1);
         canThrow = true;
