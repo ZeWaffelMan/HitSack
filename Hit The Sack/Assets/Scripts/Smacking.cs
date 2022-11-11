@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 public class Smacking : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class Smacking : MonoBehaviour
             Vector2 direction = obj.transform.position - transform.position;
 
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
+            CameraShaker.Instance.ShakeOnce(.3f, .6f, .1f, .5f);
         }
     }
-
     private void FixedUpdate()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
