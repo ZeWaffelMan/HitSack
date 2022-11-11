@@ -8,6 +8,7 @@ public class BombMan : MonoBehaviour
     public GameObject target;
     Rigidbody rb;
     bool isDone = false;
+    public static bool unlink = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,6 +17,7 @@ public class BombMan : MonoBehaviour
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         }
     }
+
     private void Start()
     {
         if(isDone == false)

@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrabMovement : MonoBehaviour
+public class Run : MonoBehaviour
 {
     public GameObject leftLeg;
     public GameObject rightLeg;
     Rigidbody2D leftLegRB;
     Rigidbody2D rightLegRB;
 
-    public static bool canThrow = false;
+    public static bool hitWall = false;
 
     public Animator animator;
 
@@ -21,29 +21,21 @@ public class CrabMovement : MonoBehaviour
         leftLegRB = leftLeg.GetComponent<Rigidbody2D>();
         rightLegRB = rightLeg.GetComponent<Rigidbody2D>();
     }
-
     private void Update()
     {
-        //Run Towards
-        Debug.Log(TheDistance.distance);
-        if (TheDistance.distance > 6)
+        if (hitWall == true)
         {
-            animator.Play("CrabWalkRight");
+            animator.Play("Walk Right");
             StartCoroutine(MoveRight(stepWait));
         }
-        else if (TheDistance.distance < -6)
+        else if (hitWall == false)
         {
-            animator.Play("CrabWalkLeft");
+            animator.Play("Walk Left");
             StartCoroutine(MoveLeft(stepWait));
-        }
-        else if (canThrow == false)
-        {
-            StartCoroutine(Throw());
-            animator.Play("IdleCrab");
         }
         else
         {
-            animator.Play("IdleCrab");
+            animator.Play("Idle");
         }
     }
 
@@ -59,11 +51,5 @@ public class CrabMovement : MonoBehaviour
         rightLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
         yield return new WaitForSeconds(seconds);
         leftLegRB.AddForce(Vector2.left * (speed * 1000) * Time.deltaTime);
-    }
-
-    IEnumerator Throw()
-    {
-        yield return new WaitForSeconds(1);
-        canThrow = true;
     }
 }

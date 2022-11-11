@@ -815,7 +815,7 @@ GameObject:
   - component: {fileID: 6075063801557643545}
   - component: {fileID: 4855197454214933347}
   - component: {fileID: 4855197453033193090}
-  - component: {fileID: 4855197454214933372}
+  - component: {fileID: 7182145226817848300}
   m_Layer: 0
   m_Name: TheRagdoll
   m_TagString: Untagged
@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57c55044ca5e1e43baf007f825a6368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4855197454214933372
+--- !u!114 &7182145226817848300
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4937897391457446266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4783223ac5683174fa05a93c8178d91c, type: 3}
+  m_Script: {fileID: 11500000, guid: 94c672aed04789840b42dacdc2b6ef4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftLeg: {fileID: 4383189138277661426}

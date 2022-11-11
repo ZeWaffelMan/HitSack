@@ -25,13 +25,13 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         //Run Towards
-        Debug.Log(TheDistance.distance);
-        if (TheDistance.distance > 6)
+        //Debug.Log(TheDistance.distance);
+        if (TheDistance.distance > 6 || TheDistance.distance > 2)
         {
             animator.Play("Walk Right");
             StartCoroutine(MoveRight(stepWait));
         }
-        else if (TheDistance.distance < -6)
+        else if (TheDistance.distance < -6 || TheDistance.distance < -2)
         {
             animator.Play("Walk Left");
             StartCoroutine(MoveLeft(stepWait));

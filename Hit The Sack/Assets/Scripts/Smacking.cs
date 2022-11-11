@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Smacking : MonoBehaviour
 {
     public float fieldofImpact;
     public float force;
     public static bool hit = false;
+
+    private int money = 1;
+    public Text moneyText;
+
+    private bool isRunning = false;
 
     public LayerMask layerToHit;
 
@@ -40,9 +46,14 @@ public class Smacking : MonoBehaviour
             {
                 if (hit.transform.gameObject == Sack)
                 {
+                    moneyText.text = money.ToString();
+                    money++;
                     Debug.Log("Slap");
                     Impact();
-                    StartCoroutine(Switch());
+                    if(isRunning == false)
+                    {
+                        StartCoroutine(Switch());
+                    }
                 }
             }
         }
@@ -50,7 +61,9 @@ public class Smacking : MonoBehaviour
     IEnumerator Switch()
     {
         hit = true;
+        isRunning = true;
         yield return new WaitForSeconds(0.3f);
+        isRunning = false;
         hit = false;
     }
 

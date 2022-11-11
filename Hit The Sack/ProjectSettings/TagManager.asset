@@ -7,6 +7,10 @@ TagManager:
   - Sack
   - Weapon
   - Bomb
+  - BombMan
+  - LeftWall
+  - RightWall
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - Water
   - UI
   - PostProssecing
-  - 
+  - Enemy
   - 
   - 
   - 
