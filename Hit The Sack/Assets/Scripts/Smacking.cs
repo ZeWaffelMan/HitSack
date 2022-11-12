@@ -10,8 +10,10 @@ public class Smacking : MonoBehaviour
     public float force;
     public static bool hit = false;
 
-    private int money = 1;
-    public Text moneyText;
+    public GameObject hitEffect;
+
+    public int clicks = 1;
+    public Text clicksText;
 
     private bool isRunning = false;
 
@@ -29,6 +31,7 @@ public class Smacking : MonoBehaviour
 
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
             CameraShaker.Instance.ShakeOnce(.3f, .6f, .1f, .5f);
+            //Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
     }
     private void FixedUpdate()
@@ -47,8 +50,8 @@ public class Smacking : MonoBehaviour
             {
                 if (hit.transform.gameObject == Sack)
                 {
-                    moneyText.text = money.ToString();
-                    money++;
+                    clicksText.text = clicks.ToString();
+                    clicks++;
                     Debug.Log("Slap");
                     Impact();
                     if(isRunning == false)

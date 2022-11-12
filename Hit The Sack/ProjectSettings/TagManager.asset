@@ -11,6 +11,7 @@ TagManager:
   - LeftWall
   - RightWall
   - Enemy
+  - Event
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - PostProssecing
   - Enemy
-  - 
+  - NoPost
   - 
   - 
   - 
