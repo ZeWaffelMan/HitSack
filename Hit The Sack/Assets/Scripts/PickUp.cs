@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
         }
         else
         {
-            GetComponent<Rigidbody2D>().isKinematic = false;
+            GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
 }

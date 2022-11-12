@@ -14,12 +14,19 @@ public class Smacking : MonoBehaviour
 
     public int clicks = 1;
     public Text clicksText;
+    AudioManager audioManager;
+    public int cursorClicks = 1;
 
     private bool isRunning = false;
 
     public LayerMask layerToHit;
 
     public GameObject Sack;
+
+    private void Awake()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
 
     void Impact()
     {
@@ -30,7 +37,7 @@ public class Smacking : MonoBehaviour
             Vector2 direction = obj.transform.position - transform.position;
 
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
-            CameraShaker.Instance.ShakeOnce(.3f, .6f, .1f, .5f);
+            //CameraShaker.Instance.ShakeOnce(.2f, .4f, .1f, .5f);
             //Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
     }
@@ -50,18 +57,19 @@ public class Smacking : MonoBehaviour
             {
                 if (hit.transform.gameObject == Sack)
                 {
+                    clicks += cursorClicks;
                     clicksText.text = clicks.ToString();
-                    clicks++;
                     Debug.Log("Slap");
                     Impact();
                     if(isRunning == false)
                     {
-                        StartCoroutine(Switch());
+                        //StartCoroutine(Switch());
                     }
                 }
             }
         }
     }
+    /*
     IEnumerator Switch()
     {
         hit = true;
@@ -70,7 +78,7 @@ public class Smacking : MonoBehaviour
         isRunning = false;
         hit = false;
     }
-
+    */
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
