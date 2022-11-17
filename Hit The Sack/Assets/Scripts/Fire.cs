@@ -6,6 +6,8 @@ public class Fire : MonoBehaviour
 {
     Smacking smacking;
     bool isRunning = false;
+    public GameObject pointsPopup;
+    public GameObject pointsPos;
 
     private void Awake()
     {
@@ -25,6 +27,7 @@ public class Fire : MonoBehaviour
         yield return new WaitForSeconds(1);
         smacking.clicks += 5;
         smacking.clicksText.text = smacking.clicks.ToString();
+        Instantiate(pointsPopup, pointsPos.transform.position, Quaternion.identity);
         isRunning = false;
     }
 }
