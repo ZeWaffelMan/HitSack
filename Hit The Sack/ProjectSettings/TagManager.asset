@@ -12,6 +12,7 @@ TagManager:
   - RightWall
   - Enemy
   - Event
+  - Fire
   layers:
   - Default
   - TransparentFX

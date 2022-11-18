@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 856151121536435307}
   - component: {fileID: 6175906851198377836}
   m_Layer: 0
-  m_Name: BananaEffect 1
+  m_Name: BananaEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
