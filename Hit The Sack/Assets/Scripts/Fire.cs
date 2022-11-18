@@ -5,9 +5,14 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     Smacking smacking;
+    public static int fireAmount = 5;
     bool isRunning = false;
-    public GameObject pointsPopup;
+
     public GameObject pointsPos;
+
+    public GameObject floatingPoints;
+    public GameObject upgradeFloatingPoints;
+
 
     private void Awake()
     {
@@ -25,9 +30,15 @@ public class Fire : MonoBehaviour
     {
         isRunning = true;
         yield return new WaitForSeconds(1);
-        smacking.clicks += 5;
+        smacking.clicks += fireAmount;
         smacking.clicksText.text = smacking.clicks.ToString();
-        Instantiate(pointsPopup, pointsPos.transform.position, Quaternion.identity);
+        if(fireAmount == 5)
+        {
+            Instantiate(floatingPoints, pointsPos.transform.position, Quaternion.identity);
+        }else if (fireAmount == 10)
+        {
+            Instantiate(upgradeFloatingPoints, pointsPos.transform.position, Quaternion.identity);
+        }
         isRunning = false;
     }
 }

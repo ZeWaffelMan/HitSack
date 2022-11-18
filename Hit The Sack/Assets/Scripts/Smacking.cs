@@ -12,6 +12,7 @@ public class Smacking : MonoBehaviour
 
     public GameObject oneFloatingPoints;
     public GameObject twoFloatingPoints;
+    public GameObject fourFloatingPoints;
 
     public GameObject hitEffect;
 
@@ -68,6 +69,10 @@ public class Smacking : MonoBehaviour
                     if (cursorClicks == 2)
                     {
                         Instantiate(twoFloatingPoints, transform.position, Quaternion.identity);
+                    }
+                    if (cursorClicks == 4)
+                    {
+                        Instantiate(fourFloatingPoints, transform.position, Quaternion.identity);
                     }
                     clicksText.text = clicks.ToString();
                     Debug.Log("Slap");

@@ -6,7 +6,11 @@ public class Banana : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector3 lastVelocity;
+
     public GameObject floatingPoints;
+    public GameObject upgradeFloatingPoints;
+
+    public static int bananaAmount = 109;
 
     Smacking smacking;
     bool isRunning = false;
@@ -38,9 +42,15 @@ public class Banana : MonoBehaviour
     {
         isRunning = true;
         yield return new WaitForSeconds(5);
-        smacking.clicks += 109;
+        smacking.clicks += bananaAmount;
         smacking.clicksText.text = smacking.clicks.ToString();
-        Instantiate(floatingPoints, transform.position, Quaternion.identity);
+        if(bananaAmount == 109)
+        {
+            Instantiate(floatingPoints, transform.position, Quaternion.identity);
+        } else if (bananaAmount == 218)
+        {
+            Instantiate(upgradeFloatingPoints, transform.position, Quaternion.identity);
+        }
         isRunning = false;
     }
 }
