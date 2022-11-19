@@ -75,7 +75,6 @@ public class Smacking : MonoBehaviour
                         Instantiate(fourFloatingPoints, transform.position, Quaternion.identity);
                     }
                     clicksText.text = clicks.ToString();
-                    Debug.Log("Slap");
                     Impact();
                     if(isRunning == false)
                     {

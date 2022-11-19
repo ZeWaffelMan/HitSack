@@ -19,6 +19,7 @@ public class ShopManager : MonoBehaviour
     public GameObject bananaButton;
     public GameObject glassesButton;
     public GameObject magicButton;
+    public GameObject rotateButton;
 
     public Animator sackAnimator;
 
@@ -76,12 +77,13 @@ public class ShopManager : MonoBehaviour
             smacking.clicksText.text = smacking.clicks.ToString();
             audioManager.Play("Slap");
 
+
             ButtonRef.SetActive(false);
+            smacking.cursorClicks = 2;
+
             fireButton.SetActive(true);
             bananaButton.SetActive(true);
-            smacking.cursorClicks = 2;
         }
-
     }
 
     // Fire
@@ -120,7 +122,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    // Gold Chain
+    // More
     public void Buy4()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
@@ -136,8 +138,6 @@ public class ShopManager : MonoBehaviour
 
             ButtonRef.SetActive(false);
 
-            chain.SetActive(false);
-            goldChain.SetActive(true);
             magicButton.SetActive(true);
 
             smacking.cursorClicks += smacking.cursorClicks;
@@ -158,10 +158,12 @@ public class ShopManager : MonoBehaviour
             audioManager.Play("Slap");
 
             ButtonRef.SetActive(false);
+            rotateButton.SetActive(true);
             sackAnimator.Play("SackDisco");
         }
     }
 
+    // Rotate
     public void Buy6()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
