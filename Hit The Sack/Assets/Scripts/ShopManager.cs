@@ -15,6 +15,7 @@ public class ShopManager : MonoBehaviour
     public GameObject backgroundRotater;
     public GameObject objects;
     public GameObject allGone;
+    public GameObject machineGun;
 
     public GameObject fireButton;
     public GameObject cursorButton;
@@ -50,6 +51,7 @@ public class ShopManager : MonoBehaviour
         shopItems[1, 5] = 5;
         shopItems[1, 6] = 6;
         shopItems[1, 7] = 7;
+        shopItems[1, 8] = 8;
 
 
 
@@ -61,6 +63,7 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 5] = 4;
         shopItems[2, 6] = 0;
         shopItems[2, 7] = 0;
+        shopItems[2, 8] = 0;
 
 
     }
@@ -217,6 +220,23 @@ public class ShopManager : MonoBehaviour
 
             Rotate.canSpinFaster = false;
             Rotate.isStopped = true;
+        }
+    }
+
+    public void Buy8()
+    {
+        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+
+        if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
+        {
+            smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
+            smacking.clicksText.text = smacking.clicks.ToString();
+
+            audioManager.Play("Slap");
+
+            ButtonRef.SetActive(false);
+
+            machineGun.SetActive(true);
         }
     }
 }

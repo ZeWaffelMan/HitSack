@@ -18,11 +18,11 @@ public class RotateOtherWay : MonoBehaviour
 
     public GameObject smoke;
 
-    public GameObject colorGrading;
-
     public GameObject stopButton;
     public GameObject _audioManager;
     public GameObject music;
+    public GameObject yesButton;
+
     AudioManager audioManager;
     
 
@@ -91,6 +91,7 @@ public class RotateOtherWay : MonoBehaviour
         smoke.SetActive(true);
         yield return new WaitForSeconds(1);
         black.SetActive(false);
-        colorGrading.SetActive(true);
+        yield return new WaitForSeconds(10);
+        yesButton.SetActive(true);
     }
 }

@@ -60,7 +60,10 @@ public class Smacking : MonoBehaviour
             {
                 if (hit.transform.gameObject == Sack)
                 {
-                    clicks += cursorClicks;
+                    if(clicks < 99999)
+                    {
+                        clicks += cursorClicks;
+                    }
                     audioManager.Play("Tap");
                     if(cursorClicks == 1)
                     {
