@@ -61,7 +61,7 @@ public class Smacking : MonoBehaviour
                 if (hit.transform.gameObject == Sack)
                 {
                     clicks += cursorClicks;
-                    audioManager.Play("Hit");
+                    audioManager.Play("Tap");
                     if(cursorClicks == 1)
                     {
                         Instantiate(oneFloatingPoints, transform.position, Quaternion.identity);

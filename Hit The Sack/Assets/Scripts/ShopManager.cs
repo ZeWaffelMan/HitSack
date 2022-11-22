@@ -45,6 +45,8 @@ public class ShopManager : MonoBehaviour
         shopItems[1, 3] = 3;
         shopItems[1, 4] = 4;
         shopItems[1, 5] = 5;
+        shopItems[1, 6] = 6;
+        shopItems[1, 7] = 7;
 
 
 
@@ -54,6 +56,8 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 3] = 502;
         shopItems[2, 4] = 2026;
         shopItems[2, 5] = 4;
+        shopItems[2, 6] = 0;
+        shopItems[2, 7] = 0;
 
 
     }
@@ -158,6 +162,7 @@ public class ShopManager : MonoBehaviour
             audioManager.Play("Slap");
 
             ButtonRef.SetActive(false);
+
             rotateButton.SetActive(true);
             sackAnimator.Play("SackDisco");
         }
@@ -175,8 +180,29 @@ public class ShopManager : MonoBehaviour
             audioManager.Play("Slap");
 
             ButtonRef.SetActive(false);
+
             backgroundRotater.SetActive(true);
             boughtRotate = true;
+            Rotate.canSpinFaster = true;
+        }
+    }
+
+    // Stop Spinning
+    public void Buy7()
+    {
+        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+
+        if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
+        {
+            smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
+            smacking.clicksText.text = smacking.clicks.ToString();
+
+            audioManager.Play("Slap");
+
+            ButtonRef.SetActive(false);
+
+            Rotate.canSpinFaster = false;
+            Rotate.isStopped = true;
         }
     }
 }
