@@ -28,14 +28,14 @@ public class Rotate : MonoBehaviour
         // Spin
         if(ShopManager.boughtRotate == true)
         {
-            if (canSpinFaster == true && _rotation.z < 150)
+            if (canSpinFaster == true && _rotation.z < 200)
             {
                 StartCoroutine(Spin());
             }
             transform.Rotate(_rotation * Time.deltaTime);
         }
 
-        if(_rotation.z == 150)
+        if(_rotation.z == 200)
         {
             stopButton.SetActive(true);
         }

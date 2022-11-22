@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class RotateOtherWay : MonoBehaviour
 {
@@ -12,10 +13,17 @@ public class RotateOtherWay : MonoBehaviour
 
 
     public GameObject target;
-    public GameObject rotateAudio;
     public GameObject black;
-    //public GameObject _audioManager;
-    //AudioManager audioManager;
+    public GameObject backgroundRotater;
+
+    public GameObject smoke;
+
+    public GameObject colorGrading;
+
+    public GameObject stopButton;
+    public GameObject _audioManager;
+    public GameObject music;
+    AudioManager audioManager;
     
 
     public Animator sackAnimator;
@@ -26,14 +34,9 @@ public class RotateOtherWay : MonoBehaviour
 
     private void Awake()
     {
-        //audioManager = _audioManager.GetComponent<AudioManager>();
+        audioManager = _audioManager.GetComponent<AudioManager>();
         _transform = GetComponent<Transform>();
         rotateOtherWay = GetComponent<RotateOtherWay>();
-    }
-
-    private void Start()
-    {
-        rotateAudio.SetActive(true);
     }
 
     private void Update()
@@ -41,14 +44,14 @@ public class RotateOtherWay : MonoBehaviour
         // Spin
         if (ShopManager.boughtRotate == true)
         {
-            if (canSpinFaster == true && _rotation.z > -400)
+            if (canSpinFaster == true && _rotation.z > -1000)
             {
                 StartCoroutine(Spin());
             }
             transform.Rotate(_rotation * Time.deltaTime);
         }
 
-        if (_rotation.z <= -400)
+        if (_rotation.z <= -1000)
         {
             isStopped = true;
         }
@@ -59,7 +62,6 @@ public class RotateOtherWay : MonoBehaviour
             StartCoroutine(NextPart());
             canSpinFaster = false;
             _rotation.z = 0;
-            Destroy(rotateAudio);
             transform.rotation = target.transform.rotation;
         }
     }
@@ -70,14 +72,25 @@ public class RotateOtherWay : MonoBehaviour
         canSpinFaster = false;
         yield return new WaitForSeconds(0.01f);
         _rotation.z--;
+        _rotation.z--;
         canSpinFaster = true;
     }
 
     IEnumerator NextPart()
     {
         black.SetActive(true);
+        music.SetActive(false);
         isStopped = false;
-        yield return new WaitForSeconds(3);
+
+        Destroy(stopButton);
+        Destroy(backgroundRotater);
+        sackAnimator.Play("SackIdle");
+
+        audioManager.Play("Crash");
+
+        smoke.SetActive(true);
+        yield return new WaitForSeconds(1);
         black.SetActive(false);
+        colorGrading.SetActive(true);
     }
 }

@@ -13,6 +13,8 @@ public class ShopManager : MonoBehaviour
     public GameObject chain;
     public GameObject goldChain;
     public GameObject backgroundRotater;
+    public GameObject objects;
+    public GameObject allGone;
 
     public GameObject fireButton;
     public GameObject cursorButton;
@@ -22,6 +24,7 @@ public class ShopManager : MonoBehaviour
     public GameObject rotateButton;
 
     public Animator sackAnimator;
+    public Animator cameraAnimator;
 
     private bool boughtFire = false;
     private bool boughtBanana = false;
@@ -160,12 +163,23 @@ public class ShopManager : MonoBehaviour
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
             smacking.clicksText.text = smacking.clicks.ToString();
             audioManager.Play("Slap");
+            StartCoroutine(Magic());
 
             ButtonRef.SetActive(false);
 
-            rotateButton.SetActive(true);
-            sackAnimator.Play("SackDisco");
+            //sackAnimator.Play("SackDisco");
         }
+    }
+
+    IEnumerator Magic()
+    {
+        cameraAnimator.Play("Gone");
+        yield return new WaitForSeconds(1);
+        objects.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Instantiate(allGone);
+        yield return new WaitForSeconds(8);
+        rotateButton.SetActive(true);
     }
 
     // Rotate
