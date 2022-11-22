@@ -13,6 +13,7 @@ public class RotateOtherWay : MonoBehaviour
 
     public GameObject target;
     public GameObject rotateAudio;
+    public GameObject black;
     //public GameObject _audioManager;
     //AudioManager audioManager;
     
@@ -55,6 +56,7 @@ public class RotateOtherWay : MonoBehaviour
         // Stop Spinning
         if (isStopped == true)
         {
+            StartCoroutine(NextPart());
             canSpinFaster = false;
             _rotation.z = 0;
             Destroy(rotateAudio);
@@ -69,5 +71,13 @@ public class RotateOtherWay : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
         _rotation.z--;
         canSpinFaster = true;
+    }
+
+    IEnumerator NextPart()
+    {
+        black.SetActive(true);
+        isStopped = false;
+        yield return new WaitForSeconds(3);
+        black.SetActive(false);
     }
 }
