@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ShopManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class ShopManager : MonoBehaviour
     public GameObject objects;
     public GameObject allGone;
     public GameObject machineGun;
+    public GameObject flash;
+
+    public GameObject explosion;
+    public GameObject spinParticleEffect;
 
     public GameObject fireButton;
     public GameObject cursorButton;
@@ -44,7 +49,7 @@ public class ShopManager : MonoBehaviour
     private void Start()
     {
         //ID's
-        shopItems[1,1] = 1;
+        shopItems[1, 1] = 1;
         shopItems[1, 2] = 2;
         shopItems[1, 3] = 3;
         shopItems[1, 4] = 4;
@@ -52,6 +57,7 @@ public class ShopManager : MonoBehaviour
         shopItems[1, 6] = 6;
         shopItems[1, 7] = 7;
         shopItems[1, 8] = 8;
+        shopItems[1, 9] = 9;
 
 
 
@@ -59,18 +65,19 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 1] = 100;
         shopItems[2, 2] = 250;
         shopItems[2, 3] = 502;
-        shopItems[2, 4] = 2026;
+        shopItems[2, 4] = 1400;
         shopItems[2, 5] = 4;
         shopItems[2, 6] = 0;
         shopItems[2, 7] = 0;
         shopItems[2, 8] = 0;
+        shopItems[2, 9] = 0;
 
 
     }
 
     private void Update()
     {
-        if(boughtFire == true && boughtBanana == true)
+        if (boughtFire == true && boughtBanana == true)
         {
             glassesButton.SetActive(true);
         }
@@ -114,7 +121,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-    //Banana
+    // Banana
     public void Buy3()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
@@ -201,6 +208,8 @@ public class ShopManager : MonoBehaviour
             backgroundRotater.SetActive(true);
             boughtRotate = true;
             Rotate.canSpinFaster = true;
+
+            spinParticleEffect.SetActive(true);
         }
     }
 
@@ -220,9 +229,11 @@ public class ShopManager : MonoBehaviour
 
             Rotate.canSpinFaster = false;
             Rotate.isStopped = true;
+            spinParticleEffect.SetActive(false);
         }
     }
 
+    // MachineGun
     public void Buy8()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
@@ -238,5 +249,28 @@ public class ShopManager : MonoBehaviour
 
             machineGun.SetActive(true);
         }
+    }
+
+    public void Buy9()
+    {
+        GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
+
+        if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
+        {
+            smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
+            smacking.clicksText.text = smacking.clicks.ToString();
+
+            audioManager.Play("Slap");
+
+            ButtonRef.SetActive(false);
+
+            StartCoroutine(Explosion());
+        }
+    }
+    IEnumerator Explosion()
+    {
+        Instantiate(explosion);
+        yield return new WaitForSeconds(0.2f);
+        flash.SetActive(true);
     }
 }

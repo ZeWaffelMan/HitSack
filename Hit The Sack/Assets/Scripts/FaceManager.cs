@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FaceManager : MonoBehaviour
 {
-    /*
+    
     public GameObject[] faces;
     private int facesIndex;
 
@@ -38,6 +38,4 @@ public class FaceManager : MonoBehaviour
             facesIndex = 0;
         }
     }
-
-    */
 }

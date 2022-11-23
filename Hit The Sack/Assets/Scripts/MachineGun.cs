@@ -9,6 +9,7 @@ public class MachineGun : MonoBehaviour
 
     public GameObject nine;
     public GameObject colorGrading;
+    public GameObject nukeButton;
 
     private bool isMax = false;
 
@@ -22,11 +23,11 @@ public class MachineGun : MonoBehaviour
         clicksAnimator.Play("Shake");
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (smacking.clicks < 99999)
         {
-            smacking.clicks += 50;
+            smacking.clicks += 125;
             smacking.clicksText.text = smacking.clicks.ToString();
         }
 
@@ -40,9 +41,14 @@ public class MachineGun : MonoBehaviour
 
         if (isMax == true)
         {
-            StartCoroutine(Flash());
+            StartCoroutine(Nuke());
+            var ticking = GetComponent<AudioSource>();
+            Destroy(ticking);
+            //StartCoroutine(Flash());
         }
     }
+
+    /*
     IEnumerator Flash()
     {
         isMax = false;
@@ -51,5 +57,12 @@ public class MachineGun : MonoBehaviour
         yield return new WaitForSeconds(1);
         colorGrading.SetActive(false);
         isMax = true;
+    }
+    */
+
+    IEnumerator Nuke()
+    {
+        yield return new WaitForSeconds(2);
+        nukeButton.SetActive(true);
     }
 }

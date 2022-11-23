@@ -14,37 +14,11 @@ public class Movement : MonoBehaviour
     public Animator animator;
 
     [SerializeField] float speed = 1.5f;
-    [SerializeField] float stepWait = .5f;
 
     private void Start()
     {
         leftLegRB = leftLeg.GetComponent<Rigidbody2D>();
         rightLegRB = rightLeg.GetComponent<Rigidbody2D>();
-    }
-
-    private void Update()
-    {
-        //Run Towards
-        //Debug.Log(TheDistance.distance);
-        if (TheDistance.distance > 6 || TheDistance.distance > 2)
-        {
-            animator.Play("Walk Right");
-            StartCoroutine(MoveRight(stepWait));
-        }
-        else if (TheDistance.distance < -6 || TheDistance.distance < -2)
-        {
-            animator.Play("Walk Left");
-            StartCoroutine(MoveLeft(stepWait));
-        }
-        else if (canThrow == false)
-        {
-            StartCoroutine(Throw());
-            animator.Play("Idle");
-        }
-        else
-        {
-            animator.Play("Idle");
-        }
     }
 
     IEnumerator MoveRight(float seconds)

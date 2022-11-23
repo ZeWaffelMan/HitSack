@@ -21,11 +21,11 @@ public class Smacking : MonoBehaviour
     AudioManager audioManager;
     public int cursorClicks = 1;
 
-    private bool isRunning = false;
-
     public LayerMask layerToHit;
 
     public GameObject Sack;
+
+    public Animator facesAnim;
 
     private void Awake()
     {
@@ -79,24 +79,11 @@ public class Smacking : MonoBehaviour
                     }
                     clicksText.text = clicks.ToString();
                     Impact();
-                    if(isRunning == false)
-                    {
-                        //StartCoroutine(Switch());
-                    }
                 }
             }
         }
     }
-    /*
-    IEnumerator Switch()
-    {
-        hit = true;
-        isRunning = true;
-        yield return new WaitForSeconds(0.3f);
-        isRunning = false;
-        hit = false;
-    }
-    */
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

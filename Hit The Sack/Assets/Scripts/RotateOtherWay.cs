@@ -15,6 +15,7 @@ public class RotateOtherWay : MonoBehaviour
     public GameObject target;
     public GameObject black;
     public GameObject backgroundRotater;
+    public GameObject ceiling;
 
     public GameObject smoke;
 
@@ -24,9 +25,8 @@ public class RotateOtherWay : MonoBehaviour
     public GameObject yesButton;
 
     AudioManager audioManager;
-    
 
-    public Animator sackAnimator;
+    public Animator faceAnim;
 
     Transform _transform;
 
@@ -84,11 +84,13 @@ public class RotateOtherWay : MonoBehaviour
 
         Destroy(stopButton);
         Destroy(backgroundRotater);
-        sackAnimator.Play("SackIdle");
+        faceAnim.Play("Sad");
 
         audioManager.Play("Crash");
 
         smoke.SetActive(true);
+        BreakLink.isBroken = true;
+        Destroy(ceiling);
         yield return new WaitForSeconds(1);
         black.SetActive(false);
         yield return new WaitForSeconds(10);

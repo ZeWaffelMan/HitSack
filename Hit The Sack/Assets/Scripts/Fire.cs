@@ -13,11 +13,19 @@ public class Fire : MonoBehaviour
     public GameObject floatingPoints;
     public GameObject upgradeFloatingPoints;
 
+    public Animator facesAnim;
+
 
     private void Awake()
     {
         smacking = GameObject.Find("MouseManager").GetComponent<Smacking>();
     }
+
+    private void Start()
+    {
+        facesAnim.Play("Neutral");
+    }
+
     private void Update()
     {
         if(isRunning == false)

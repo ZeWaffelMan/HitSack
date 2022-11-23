@@ -12,10 +12,10 @@ public class Rotate : MonoBehaviour
 
     public GameObject stopButton;
 
-    public Animator sackAnimator;
-
     Rotate rotate;
     RotateOtherWay rotateOtherWay;
+
+    public Animator facesAnim;
 
     private void Awake()
     {
@@ -40,8 +40,12 @@ public class Rotate : MonoBehaviour
             stopButton.SetActive(true);
         }
 
+        if(_rotation.z > 100)
+        {
+            facesAnim.Play("Dizzy");
+        }
         // Stop Spinning
-        if(isStopped == true)
+        if (isStopped == true)
         {
             rotateOtherWay.enabled = true;
             rotate.enabled = false;
