@@ -18,6 +18,10 @@ public class ShopManager : MonoBehaviour
     public GameObject allGone;
     public GameObject machineGun;
     public GameObject flash;
+    public GameObject chainBase;
+    public GameObject sack;
+    public GameObject deadSack;
+    public GameObject newWalls;
 
     public GameObject explosion;
     public GameObject spinParticleEffect;
@@ -251,6 +255,7 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    // Explosion
     public void Buy9()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
@@ -260,7 +265,8 @@ public class ShopManager : MonoBehaviour
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
             smacking.clicksText.text = smacking.clicks.ToString();
 
-            audioManager.Play("Slap");
+            //audioManager.Play("Beep");
+            audioManager.Play("Explosion");
 
             ButtonRef.SetActive(false);
 
@@ -271,6 +277,9 @@ public class ShopManager : MonoBehaviour
     {
         Instantiate(explosion);
         yield return new WaitForSeconds(0.2f);
+        sack.SetActive(false);
+        chainBase.SetActive(false);
+        deadSack.SetActive(true);
         flash.SetActive(true);
     }
 }
