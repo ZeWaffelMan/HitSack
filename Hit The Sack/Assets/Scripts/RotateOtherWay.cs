@@ -17,8 +17,6 @@ public class RotateOtherWay : MonoBehaviour
     public GameObject backgroundRotater;
     public GameObject ceiling;
 
-    public GameObject smoke;
-
     public GameObject stopButton;
     public GameObject _audioManager;
     public GameObject music;
@@ -88,7 +86,6 @@ public class RotateOtherWay : MonoBehaviour
 
         audioManager.Play("Crash");
 
-        smoke.SetActive(true);
         BreakLink.isBroken = true;
         Destroy(ceiling);
         yield return new WaitForSeconds(1);

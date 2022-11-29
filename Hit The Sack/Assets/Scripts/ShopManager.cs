@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
 {
     public int[,] shopItems = new int[10, 10];
 
+    //Stuff
     public GameObject fire;
     public GameObject banana;
     public GameObject chain;
@@ -18,14 +19,25 @@ public class ShopManager : MonoBehaviour
     public GameObject allGone;
     public GameObject machineGun;
     public GameObject flash;
+    public GameObject newFlash;
     public GameObject chainBase;
     public GameObject sack;
     public GameObject deadSack;
     public GameObject newWalls;
+    public GameObject music;
+    public GameObject square;
+    public GameObject top;
 
+    //Text
+    public GameObject bruhText;
+    public GameObject nextText;
+    public GameObject clicksText;
+
+    //Effects
     public GameObject explosion;
     public GameObject spinParticleEffect;
 
+    //Buttons
     public GameObject fireButton;
     public GameObject cursorButton;
     public GameObject bananaButton;
@@ -33,12 +45,13 @@ public class ShopManager : MonoBehaviour
     public GameObject magicButton;
     public GameObject rotateButton;
 
+    //Animators
     public Animator sackAnimator;
     public Animator cameraAnimator;
 
+
     private bool boughtFire = false;
     private bool boughtBanana = false;
-
     public static bool boughtRotate = false;
 
     Smacking smacking;
@@ -234,6 +247,7 @@ public class ShopManager : MonoBehaviour
             Rotate.canSpinFaster = false;
             Rotate.isStopped = true;
             spinParticleEffect.SetActive(false);
+            bruhText.SetActive(true);
         }
     }
 
@@ -279,7 +293,28 @@ public class ShopManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         sack.SetActive(false);
         chainBase.SetActive(false);
-        deadSack.SetActive(true);
         flash.SetActive(true);
+        music.SetActive(false);
+        clicksText.SetActive(false);
+        newWalls.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        nextText.SetActive(true);
+        flash.SetActive(false);
+        newFlash.SetActive(true);
+
+
+        /*
+        yield return new WaitForSeconds(0.5f);
+        audioManager.Play("EarBleeding");
+        yield return new WaitForSeconds(5f);
+        audioManager.Play("Ahh");
+        square.SetActive(true);
+        deadSack.SetActive(true);
+        top.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        square.SetActive(false);
+        yield return new WaitForSeconds(8f);
+        audioManager.Play("Ooh");
+        */
     }
 }
