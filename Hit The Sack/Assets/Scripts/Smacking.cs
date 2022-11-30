@@ -44,6 +44,7 @@ public class Smacking : MonoBehaviour
             //Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
     }
+    
     private void FixedUpdate()
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

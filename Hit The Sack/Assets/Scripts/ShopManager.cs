@@ -31,7 +31,6 @@ public class ShopManager : MonoBehaviour
     //Text
     public GameObject bruhText;
     public GameObject nextText;
-    public GameObject clicksText;
 
     //Effects
     public GameObject explosion;
@@ -48,6 +47,7 @@ public class ShopManager : MonoBehaviour
     //Animators
     public Animator sackAnimator;
     public Animator cameraAnimator;
+    public Animator clicksAnimator;
 
 
     private bool boughtFire = false;
@@ -193,8 +193,6 @@ public class ShopManager : MonoBehaviour
             StartCoroutine(Magic());
 
             ButtonRef.SetActive(false);
-
-            //sackAnimator.Play("SackDisco");
         }
     }
 
@@ -277,7 +275,6 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
 
             //audioManager.Play("Beep");
             audioManager.Play("Explosion");
@@ -295,13 +292,14 @@ public class ShopManager : MonoBehaviour
         chainBase.SetActive(false);
         flash.SetActive(true);
         music.SetActive(false);
-        clicksText.SetActive(false);
         newWalls.SetActive(true);
         yield return new WaitForSeconds(2f);
+        smacking.clicks = 1;
+        smacking.clicksText.text = smacking.clicks.ToString();
         nextText.SetActive(true);
         flash.SetActive(false);
         newFlash.SetActive(true);
-
+        clicksAnimator.Play("FadeIn");
 
         /*
         yield return new WaitForSeconds(0.5f);
