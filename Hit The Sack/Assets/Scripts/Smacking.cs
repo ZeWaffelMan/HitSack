@@ -39,6 +39,7 @@ public class Smacking : MonoBehaviour
         {
             Vector2 direction = obj.transform.position - transform.position;
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
+            CameraShaker.Instance.ShakeOnce(2f, 1f, .1f, .1f);
         }
     }
     

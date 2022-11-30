@@ -900,8 +900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 146.71999}
-  m_SizeDelta: {x: 800, y: 156.56}
+  m_AnchoredPosition: {x: 0, y: 143.24}
+  m_SizeDelta: {x: 764.47, y: 149.61}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133299886
 MonoBehaviour:
@@ -930,13 +930,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A game by ZeWaffelMan for the Game Off 2022 Game Jam
+  m_Text: Hit Sack is a game made by ZeWaffelMan for the Game Off 2022 Game Jam
 --- !u!222 &133299887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4210,7 +4210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1346438594}
   - component: {fileID: 1346438593}
-  - component: {fileID: 1346438596}
   m_Layer: 6
   m_Name: Global Volume
   m_TagString: Untagged
@@ -4250,18 +4249,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1346438596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346438592}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec295d14e1f314241a90c1b21db37675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1372114745
 GameObject:
   m_ObjectHideFlags: 0

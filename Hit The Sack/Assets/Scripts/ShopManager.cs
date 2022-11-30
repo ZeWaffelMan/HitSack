@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using EZCameraShake;
 
 public class ShopManager : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class ShopManager : MonoBehaviour
 
     //Animators
     public Animator sackAnimator;
+    public Animator facesAnimator;
     public Animator cameraAnimator;
     public Animator clicksAnimator;
 
@@ -104,6 +106,13 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void Clicked()
+    {
+        smacking.clicksText.text = smacking.clicks.ToString();
+        audioManager.Play("Slap");
+        CameraShaker.Instance.ShakeOnce(2f, 4f, .1f, 1f);
+    }
+
     // Cursor
     public void Buy()
     {
@@ -112,9 +121,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
-
+            Clicked();
 
             ButtonRef.SetActive(false);
             smacking.cursorClicks = 2;
@@ -132,8 +139,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
+            Clicked();
 
             ButtonRef.SetActive(false);
             fire.SetActive(true);
@@ -150,7 +156,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
+            Clicked();
             audioManager.Play("Banana");
 
             ButtonRef.SetActive(false);
@@ -168,8 +174,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
+            Clicked();
 
             boughtBanana = false;
             boughtFire = false;
@@ -192,8 +197,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
+            Clicked();
             audioManager.Play("Woop");
             StartCoroutine(Magic());
 
@@ -208,6 +212,7 @@ public class ShopManager : MonoBehaviour
         objects.SetActive(false);
         yield return new WaitForSeconds(1);
         Instantiate(allGone);
+        facesAnimator.Play("Happy");
         yield return new WaitForSeconds(8);
         rotateButton.SetActive(true);
     }
@@ -220,8 +225,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
+            Clicked();
 
             ButtonRef.SetActive(false);
 
@@ -241,9 +245,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-
-            audioManager.Play("Slap");
+            Clicked();
 
             ButtonRef.SetActive(false);
 
@@ -262,9 +264,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-            smacking.clicksText.text = smacking.clicks.ToString();
-
-            audioManager.Play("Slap");
+            Clicked();
 
             ButtonRef.SetActive(false);
 
@@ -280,7 +280,7 @@ public class ShopManager : MonoBehaviour
         if (smacking.clicks >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID])
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
-
+            CameraShaker.Instance.ShakeOnce(4f, 5f, .1f, 5f);
             audioManager.Play("Explosion");
 
             ButtonRef.SetActive(false);
