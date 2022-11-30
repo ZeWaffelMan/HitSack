@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 15276380}
   - component: {fileID: 15276379}
   - component: {fileID: 15276381}
+  - component: {fileID: 15276382}
   m_Layer: 5
   m_Name: BruhText
   m_TagString: Untagged
@@ -335,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.105882354}
+  m_Color: {r: 0.6039216, g: 0.6039216, b: 0.6039216, a: 0.18431373}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -384,6 +385,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &15276382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15276376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1bb55c59e0c2b41b2b3430e027c28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 2
 --- !u!1 &41034864
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,7 +669,7 @@ GameObject:
   - component: {fileID: 85207712}
   - component: {fileID: 85207711}
   m_Layer: 5
-  m_Name: Back (1)
+  m_Name: Back2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4023,7 +4037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -6209,6 +6223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c53e599b2618c684ea8f865d68b0b05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioManager: {fileID: 2033142709}
 --- !u!1 &1266840156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7249,7 +7264,7 @@ GameObject:
   - component: {fileID: 1479126313}
   - component: {fileID: 1479126312}
   m_Layer: 5
-  m_Name: A Game By
+  m_Name: GameByText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7308,7 +7323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A GAME BY
+  m_Text: GAME BY
 --- !u!222 &1479126313
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7934,7 +7949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: MAGIC 2 + 2
+  m_Text: MAGIC 1200 + 500
 --- !u!222 &1567388731
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10265,7 +10280,7 @@ GameObject:
   - component: {fileID: 1917279174}
   - component: {fileID: 1917279173}
   m_Layer: 5
-  m_Name: ZeWaffelMan
+  m_Name: ZeWaffelManText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10288,7 +10303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 85}
+  m_AnchoredPosition: {x: -16.7, y: 91.2}
   m_SizeDelta: {x: 413.26, y: 207.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1917279173
@@ -10324,7 +10339,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ZEWAFFELMAN
+  m_Text: ZeWaffelMan
 --- !u!222 &1917279174
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10724,8 +10739,8 @@ MonoBehaviour:
   sounds:
   - name: Slap
     clip: {fileID: 8300000, guid: 5ee69bdd10919d044a820b427ef0adf1, type: 3}
-    volume: 1
-    pitch: 1
+    volume: 0.5
+    pitch: 1.2
     loop: 0
     source: {fileID: 0}
   - name: Hit
@@ -10736,7 +10751,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Tap
     clip: {fileID: 8300000, guid: f7716ac27168b3d4d85fab7aaf299788, type: 3}
-    volume: 0.1
+    volume: 0.05
     pitch: 0.65
     loop: 0
     source: {fileID: 0}
@@ -11163,7 +11178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989407465123538989, guid: a3fde2a1546f7f143ac591592d8a2284, type: 3}
       propertyPath: clicks
-      value: 10000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989407465123538989, guid: a3fde2a1546f7f143ac591592d8a2284, type: 3}
       propertyPath: facesAnim

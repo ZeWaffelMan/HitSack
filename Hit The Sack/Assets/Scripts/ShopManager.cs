@@ -87,7 +87,7 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 2] = 250;
         shopItems[2, 3] = 502;
         shopItems[2, 4] = 1000;
-        shopItems[2, 5] = 4;
+        shopItems[2, 5] = 1700;
         shopItems[2, 6] = 0;
         shopItems[2, 7] = 0;
         shopItems[2, 8] = 0;
