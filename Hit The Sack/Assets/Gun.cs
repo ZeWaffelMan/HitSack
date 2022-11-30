@@ -35,7 +35,6 @@ public class Gun : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        //audioManager.Play("Pick");
         Pressed = true;
     }
 
@@ -55,6 +54,7 @@ public class Gun : MonoBehaviour
                 {
                     if (ammo > 0)
                     {
+                        audioManager.Play("Gun Shot");
                         StartCoroutine(WaitImpact());
                         smacking.clicks--;
                         smacking.clicksText.text = smacking.clicks.ToString();
@@ -95,7 +95,7 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(reloadTime);
+        yield return new WaitForSeconds(0.1f);
         ammo = 1;
     }
 

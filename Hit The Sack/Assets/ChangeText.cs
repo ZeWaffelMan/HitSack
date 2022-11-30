@@ -8,7 +8,6 @@ public class ChangeText : MonoBehaviour
     public float time = 3;
 
     bool isDone = false;
-    bool hasShot = false;
 
     bool canPlay = true;
 
@@ -49,14 +48,13 @@ public class ChangeText : MonoBehaviour
 
     private void Update()
     {
-        if (Gun.Pressed == true && smacking.clicks == 6 && isDone == true)
+        if (Gun.Pressed == true && smacking.clicks == 1 && isDone == true)
         {
             isDone = false;
             StartCoroutine(coStage2);
-        } else if (Gun.Pressed == true && smacking.clicks == 5 && canPlay == true)
+        } else if (Gun.Pressed == true && smacking.clicks == 0 && canPlay == true)
         {
             canPlay = false;
-            StopCoroutine(coStage2);
             deathEffect.SetActive(true);
             letters.SetActive(true);
             isDead = true;
@@ -69,7 +67,6 @@ public class ChangeText : MonoBehaviour
         yield return new WaitForSeconds(1);
         talkingText.text = "SAY GOODBYE";
         handGun.SetActive(true);
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(1);
         audioManager.Play("Chuck");
         gunAnimator.Play("Shake");
@@ -77,13 +74,10 @@ public class ChangeText : MonoBehaviour
         gunAnimator.Play("Idle");
         yield return new WaitForSeconds(2);
         talkingText.text = "huh?";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(2);
         talkingText.text = "poop";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(2);
         talkingText.text = "*sigh*";
-        audioManager.Play("Bop");
         handGun.SetActive(false);
         gun.SetActive(true);
         isDone = true;
@@ -92,25 +86,19 @@ public class ChangeText : MonoBehaviour
         audioManager.Play("Bop");
         yield return new WaitForSeconds(2);
         talkingText.text = "...";
-        audioManager.Play("Bop");
     }
 
     IEnumerator Stage2()
     {
         yield return new WaitForSeconds(1);
         talkingText.text = "wait";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(0.5f);
         talkingText.text = "what are you doing with that?";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(3f);
         talkingText.text = "it doesn't have any ammo lol";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(2f);
         talkingText.text = "ummmm";
-        audioManager.Play("Bop");
         yield return new WaitForSeconds(5f);
         talkingText.text = "...";
-        audioManager.Play("Bop");
     }
 }

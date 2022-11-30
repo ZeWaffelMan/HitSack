@@ -82,7 +82,7 @@ public class ShopManager : MonoBehaviour
         shopItems[2, 1] = 100;
         shopItems[2, 2] = 250;
         shopItems[2, 3] = 502;
-        shopItems[2, 4] = 1400;
+        shopItems[2, 4] = 1000;
         shopItems[2, 5] = 4;
         shopItems[2, 6] = 0;
         shopItems[2, 7] = 0;
@@ -294,6 +294,7 @@ public class ShopManager : MonoBehaviour
         music.SetActive(false);
         newWalls.SetActive(true);
         yield return new WaitForSeconds(2f);
+        Destroy(machineGun);
         smacking.clicks = 1;
         smacking.clicksText.text = smacking.clicks.ToString();
         nextText.SetActive(true);
