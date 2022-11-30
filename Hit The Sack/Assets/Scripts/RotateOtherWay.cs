@@ -9,7 +9,7 @@ public class RotateOtherWay : MonoBehaviour
 
     private bool canSpinFaster = true;
 
-    public static bool isStopped = false;
+    public bool isStopped = false;
 
 
     public GameObject target;
@@ -18,23 +18,33 @@ public class RotateOtherWay : MonoBehaviour
     public GameObject ceiling;
 
     public GameObject stopButton;
-    public GameObject _audioManager;
     public GameObject music;
     public GameObject yesButton;
 
     public GameObject globalVolume2;
 
+    public GameObject _shopManager;
+    public GameObject _audioManager;
+    public GameObject breakAbleLink;
+
     AudioManager audioManager;
+    ShopManager shopManager;
 
     public Animator faceAnim;
 
     Transform _transform;
 
     RotateOtherWay rotateOtherWay;
+    BreakLink breakLink;
+
+
 
     private void Awake()
     {
+        shopManager = _shopManager.GetComponent<ShopManager>();
         audioManager = _audioManager.GetComponent<AudioManager>();
+        breakLink = breakAbleLink.GetComponent<BreakLink>(); 
+
         _transform = GetComponent<Transform>();
         rotateOtherWay = GetComponent<RotateOtherWay>();
     }
@@ -42,7 +52,7 @@ public class RotateOtherWay : MonoBehaviour
     private void Update()
     {
         // Spin
-        if (ShopManager.boughtRotate == true)
+        if (shopManager.boughtRotate == true)
         {
             if (canSpinFaster == true && _rotation.z > -1000)
             {
@@ -90,7 +100,7 @@ public class RotateOtherWay : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         globalVolume2.SetActive(true);
 
-        BreakLink.isBroken = true;
+        breakLink.isBroken = true;
         Destroy(ceiling);
         yield return new WaitForSeconds(1);
         black.SetActive(false);

@@ -8,7 +8,6 @@ public class Smacking : MonoBehaviour
 {
     public float fieldofImpact;
     public float force;
-    public static bool hit = false;
 
     public GameObject oneFloatingPoints;
     public GameObject twoFloatingPoints;
@@ -40,8 +39,6 @@ public class Smacking : MonoBehaviour
         {
             Vector2 direction = obj.transform.position - transform.position;
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
-            //CameraShaker.Instance.ShakeOnce(.2f, .4f, .1f, .5f);
-            //Instantiate(hitEffect, transform.position, Quaternion.identity);
         }
     }
     

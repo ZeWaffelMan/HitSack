@@ -6,19 +6,23 @@ public class Rotate : MonoBehaviour
 {
     [SerializeField] private Vector3 _rotation;
 
-    public static bool canSpinFaster = false;
+    public bool canSpinFaster = false;
 
-    public static bool isStopped = false;
+    public bool isStopped = false;
 
     public GameObject stopButton;
 
+    public GameObject _shopManager;
+
     Rotate rotate;
     RotateOtherWay rotateOtherWay;
+    ShopManager shopManager;
 
     public Animator facesAnim;
 
     private void Awake()
     {
+        shopManager = _shopManager.GetComponent<ShopManager>();
         rotateOtherWay = GetComponent<RotateOtherWay>();
         rotate = GetComponent<Rotate>();
     }
@@ -26,7 +30,7 @@ public class Rotate : MonoBehaviour
     private void Update()
     {
         // Spin
-        if(ShopManager.boughtRotate == true)
+        if(shopManager.boughtRotate == true)
         {
             if (canSpinFaster == true && _rotation.z < 200)
             {

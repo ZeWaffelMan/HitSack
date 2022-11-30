@@ -5,7 +5,7 @@ using EZCameraShake;
 
 public class Gun : MonoBehaviour
 {
-    public static bool Pressed = false;
+    public bool Pressed = false;
     private bool canShoot = false;
 
     public float reloadTime = 1;
@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
 
     public float fieldofImpact;
     public float force;
-    public static bool hit = false;
+    public bool hit = false;
 
     public LayerMask layerToHit;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BreakLink : MonoBehaviour
 {
-    public static bool isBroken = false;
+    public bool isBroken = false;
 
     private void Update()
     {

@@ -13,7 +13,6 @@ public class ShopManager : MonoBehaviour
     public GameObject fire;
     public GameObject banana;
     public GameObject chain;
-    public GameObject goldChain;
     public GameObject backgroundRotater;
     public GameObject objects;
     public GameObject allGone;
@@ -53,15 +52,19 @@ public class ShopManager : MonoBehaviour
 
     private bool boughtFire = false;
     private bool boughtBanana = false;
-    public static bool boughtRotate = false;
+    public bool boughtRotate = false;
+
+    public GameObject _rotate;
 
     Smacking smacking;
     AudioManager audioManager;
+    Rotate rotate;
 
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         smacking = GameObject.Find("MouseManager").GetComponent<Smacking>();
+        rotate = _rotate.GetComponent<Rotate>();
     }
 
     private void Start()
@@ -224,7 +227,7 @@ public class ShopManager : MonoBehaviour
 
             backgroundRotater.SetActive(true);
             boughtRotate = true;
-            Rotate.canSpinFaster = true;
+            rotate.canSpinFaster = true;
 
             spinParticleEffect.SetActive(true);
         }
@@ -244,8 +247,8 @@ public class ShopManager : MonoBehaviour
 
             ButtonRef.SetActive(false);
 
-            Rotate.canSpinFaster = false;
-            Rotate.isStopped = true;
+            rotate.canSpinFaster = false;
+            rotate.isStopped = true;
             spinParticleEffect.SetActive(false);
             bruhText.SetActive(true);
         }
@@ -278,7 +281,6 @@ public class ShopManager : MonoBehaviour
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
 
-            //audioManager.Play("Beep");
             audioManager.Play("Explosion");
 
             ButtonRef.SetActive(false);
@@ -296,7 +298,7 @@ public class ShopManager : MonoBehaviour
         newWalls.SetActive(true);
         audioManager.Play("EarBleeding2");
         globalVolume2.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         Destroy(machineGun);
         smacking.clicks = 1;
         smacking.clicksText.text = smacking.clicks.ToString();
@@ -304,19 +306,5 @@ public class ShopManager : MonoBehaviour
         flash.SetActive(false);
         newFlash.SetActive(true);
         clicksAnimator.Play("FadeIn");
-
-        /*
-        yield return new WaitForSeconds(0.5f);
-        audioManager.Play("EarBleeding");
-        yield return new WaitForSeconds(5f);
-        audioManager.Play("Ahh");
-        square.SetActive(true);
-        deadSack.SetActive(true);
-        top.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        square.SetActive(false);
-        yield return new WaitForSeconds(8f);
-        audioManager.Play("Ooh");
-        */
     }
 }

@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 75303b60aca97f7428f00692f2574194, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -518,6 +518,11 @@ PrefabInstance:
     - {fileID: 8423263579365269987, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587466, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587471, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579023466152, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578566216245, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578468272659, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579012321235, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579365269986, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
 --- !u!4 &63826739 stripped
 Transform:
@@ -529,23 +534,6 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8423263579365269990, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
   m_PrefabInstance: {fileID: 63826738}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &63826741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8423263579023466156, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
-  m_PrefabInstance: {fileID: 63826738}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &63826742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63826741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbbf82a980ee1844a6c5f3d40cf64ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &80849306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6158,6 +6146,11 @@ PrefabInstance:
     - {fileID: 8423263579365269987, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587466, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587471, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578566216245, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578468272659, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579012321235, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579365269986, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579023466152, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
 --- !u!4 &256533147 stripped
 Transform:
@@ -6181,6 +6174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbbf82a980ee1844a6c5f3d40cf64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBroken: 0
 --- !u!1 &325102756
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,7 +6187,6 @@ GameObject:
   - component: {fileID: 325102761}
   - component: {fileID: 325102757}
   - component: {fileID: 325102760}
-  - component: {fileID: 325102759}
   - component: {fileID: 325102758}
   m_Layer: 0
   m_Name: LilChain0000 (6)
@@ -6239,26 +6232,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &325102759
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 325102756}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &325102760
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -6821,7 +6794,6 @@ GameObject:
   - component: {fileID: 704427841}
   - component: {fileID: 704427837}
   - component: {fileID: 704427840}
-  - component: {fileID: 704427839}
   - component: {fileID: 704427838}
   m_Layer: 0
   m_Name: LilChain0000 (7)
@@ -6867,26 +6839,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &704427839
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 704427836}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &704427840
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -6990,7 +6942,6 @@ GameObject:
   - component: {fileID: 708750378}
   - component: {fileID: 708750374}
   - component: {fileID: 708750377}
-  - component: {fileID: 708750376}
   - component: {fileID: 708750375}
   m_Layer: 0
   m_Name: LilChain0000 (9)
@@ -7036,26 +6987,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &708750376
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708750373}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &708750377
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -7159,7 +7090,6 @@ GameObject:
   - component: {fileID: 711502067}
   - component: {fileID: 711502063}
   - component: {fileID: 711502066}
-  - component: {fileID: 711502065}
   - component: {fileID: 711502064}
   m_Layer: 0
   m_Name: LilChain0000 (7)
@@ -7205,26 +7135,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &711502065
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711502062}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &711502066
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -7328,7 +7238,6 @@ GameObject:
   - component: {fileID: 740475045}
   - component: {fileID: 740475044}
   - component: {fileID: 740475043}
-  - component: {fileID: 740475042}
   - component: {fileID: 740475041}
   m_Layer: 0
   m_Name: LilChain0000 (10)
@@ -7368,26 +7277,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &740475042
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740475039}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &740475043
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -7752,7 +7641,6 @@ GameObject:
   - component: {fileID: 1045597121}
   - component: {fileID: 1045597120}
   - component: {fileID: 1045597119}
-  - component: {fileID: 1045597118}
   - component: {fileID: 1045597117}
   m_Layer: 0
   m_Name: LilChain0000 (10)
@@ -7792,26 +7680,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1045597118
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045597115}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1045597119
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -8054,7 +7922,6 @@ GameObject:
   - component: {fileID: 1175474026}
   - component: {fileID: 1175474022}
   - component: {fileID: 1175474025}
-  - component: {fileID: 1175474024}
   - component: {fileID: 1175474023}
   m_Layer: 0
   m_Name: LilChain0000 (8)
@@ -8100,26 +7967,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1175474024
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175474021}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1175474025
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -8279,7 +8126,6 @@ GameObject:
   - component: {fileID: 1251068859}
   - component: {fileID: 1251068858}
   - component: {fileID: 1251068857}
-  - component: {fileID: 1251068856}
   - component: {fileID: 1251068855}
   m_Layer: 0
   m_Name: LilChain0000 (10)
@@ -8319,26 +8165,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1251068856
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251068853}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1251068857
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -8448,7 +8274,6 @@ GameObject:
   - component: {fileID: 1255317104}
   - component: {fileID: 1255317100}
   - component: {fileID: 1255317103}
-  - component: {fileID: 1255317102}
   - component: {fileID: 1255317101}
   m_Layer: 0
   m_Name: LilChain0000 (6)
@@ -8494,26 +8319,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1255317102
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255317099}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1255317103
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -8617,7 +8422,6 @@ GameObject:
   - component: {fileID: 1289774446}
   - component: {fileID: 1289774442}
   - component: {fileID: 1289774445}
-  - component: {fileID: 1289774444}
   - component: {fileID: 1289774443}
   m_Layer: 0
   m_Name: LilChain0000 (5)
@@ -8663,26 +8467,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1289774444
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1289774441}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1289774445
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -8786,7 +8570,6 @@ GameObject:
   - component: {fileID: 1304725424}
   - component: {fileID: 1304725420}
   - component: {fileID: 1304725423}
-  - component: {fileID: 1304725422}
   - component: {fileID: 1304725421}
   m_Layer: 0
   m_Name: LilChain0000 (5)
@@ -8832,26 +8615,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1304725422
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1304725419}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1304725423
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -9210,6 +8973,11 @@ PrefabInstance:
     - {fileID: 8423263579365269987, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587466, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587471, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578566216245, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578468272659, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579012321235, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579365269986, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579023466152, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
 --- !u!4 &1311038866 stripped
 Transform:
@@ -9233,6 +9001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbbf82a980ee1844a6c5f3d40cf64ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBroken: 0
 --- !u!1 &1346438592
 GameObject:
   m_ObjectHideFlags: 0
@@ -9440,7 +9209,6 @@ GameObject:
   - component: {fileID: 1526612357}
   - component: {fileID: 1526612353}
   - component: {fileID: 1526612356}
-  - component: {fileID: 1526612355}
   - component: {fileID: 1526612354}
   m_Layer: 0
   m_Name: LilChain0000 (9)
@@ -9486,26 +9254,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1526612355
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526612352}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1526612356
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -9609,7 +9357,6 @@ GameObject:
   - component: {fileID: 1539189300}
   - component: {fileID: 1539189296}
   - component: {fileID: 1539189299}
-  - component: {fileID: 1539189298}
   - component: {fileID: 1539189297}
   m_Layer: 0
   m_Name: LilChain0000 (8)
@@ -9655,26 +9402,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1539189298
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539189295}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1539189299
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -9960,7 +9687,6 @@ GameObject:
   - component: {fileID: 1560860743}
   - component: {fileID: 1560860739}
   - component: {fileID: 1560860742}
-  - component: {fileID: 1560860741}
   - component: {fileID: 1560860740}
   m_Layer: 0
   m_Name: LilChain0000 (9)
@@ -10006,26 +9732,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1560860741
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560860738}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1560860742
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -10129,7 +9835,6 @@ GameObject:
   - component: {fileID: 1607987639}
   - component: {fileID: 1607987638}
   - component: {fileID: 1607987637}
-  - component: {fileID: 1607987636}
   - component: {fileID: 1607987635}
   m_Layer: 0
   m_Name: LilChain0000 (10)
@@ -10169,26 +9874,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1607987636
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607987633}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1607987637
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -10553,6 +10238,11 @@ PrefabInstance:
     - {fileID: 8423263579365269987, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587466, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
     - {fileID: 8423263578126587471, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579023466152, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578566216245, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263578468272659, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579012321235, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
+    - {fileID: 8423263579365269986, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
 --- !u!1 &1776146843
 GameObject:
@@ -10566,7 +10256,6 @@ GameObject:
   - component: {fileID: 1776146848}
   - component: {fileID: 1776146844}
   - component: {fileID: 1776146847}
-  - component: {fileID: 1776146846}
   - component: {fileID: 1776146845}
   m_Layer: 0
   m_Name: LilChain0000 (9)
@@ -10612,26 +10301,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0034809485, y: 0.5285442}
   m_Size: {x: 0.5009778, y: 0.9385252}
   m_Direction: 0
---- !u!95 &1776146846
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776146843}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 07af3c5d3a15524429657913db9d7183, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!233 &1776146847
 HingeJoint2D:
   m_ObjectHideFlags: 0
@@ -10723,23 +10392,6 @@ Transform:
   m_Father: {fileID: 63826739}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1789675665 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8423263579023466156, guid: d553d6cfc5d8e184fa417ca817d9156f, type: 3}
-  m_PrefabInstance: {fileID: 1745303442}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1789675679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789675665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbbf82a980ee1844a6c5f3d40cf64ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1856344862
 GameObject:
   m_ObjectHideFlags: 0
