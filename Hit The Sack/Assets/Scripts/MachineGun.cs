@@ -7,8 +7,6 @@ public class MachineGun : MonoBehaviour
     Smacking smacking;
     public Animator clicksAnimator;
 
-    public GameObject nine;
-    public GameObject colorGrading;
     public GameObject nukeButton;
 
     private bool isMax = false;
@@ -34,7 +32,6 @@ public class MachineGun : MonoBehaviour
         if (smacking.clicks > 99999)
         {
             isMax = true;
-            nine.SetActive(true);
             smacking.clicks = 99999;
             smacking.clicksText.text = smacking.clicks.ToString();
         }

@@ -35,6 +35,7 @@ public class ShopManager : MonoBehaviour
     //Effects
     public GameObject explosion;
     public GameObject spinParticleEffect;
+    public GameObject globalVolume2;
 
     //Buttons
     public GameObject fireButton;
@@ -147,7 +148,7 @@ public class ShopManager : MonoBehaviour
         {
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
             smacking.clicksText.text = smacking.clicks.ToString();
-            audioManager.Play("Slap");
+            audioManager.Play("Banana");
 
             ButtonRef.SetActive(false);
             banana.SetActive(true);
@@ -190,6 +191,7 @@ public class ShopManager : MonoBehaviour
             smacking.clicks -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().itemID];
             smacking.clicksText.text = smacking.clicks.ToString();
             audioManager.Play("Slap");
+            audioManager.Play("Woop");
             StartCoroutine(Magic());
 
             ButtonRef.SetActive(false);
@@ -291,8 +293,9 @@ public class ShopManager : MonoBehaviour
         sack.SetActive(false);
         chainBase.SetActive(false);
         flash.SetActive(true);
-        music.SetActive(false);
         newWalls.SetActive(true);
+        audioManager.Play("EarBleeding2");
+        globalVolume2.SetActive(false);
         yield return new WaitForSeconds(2f);
         Destroy(machineGun);
         smacking.clicks = 1;

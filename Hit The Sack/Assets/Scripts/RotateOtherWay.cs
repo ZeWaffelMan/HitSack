@@ -22,6 +22,8 @@ public class RotateOtherWay : MonoBehaviour
     public GameObject music;
     public GameObject yesButton;
 
+    public GameObject globalVolume2;
+
     AudioManager audioManager;
 
     public Animator faceAnim;
@@ -79,12 +81,14 @@ public class RotateOtherWay : MonoBehaviour
         black.SetActive(true);
         music.SetActive(false);
         isStopped = false;
-
+        music.SetActive(false);
         Destroy(stopButton);
         Destroy(backgroundRotater);
         faceAnim.Play("Sad");
 
         audioManager.Play("Crash");
+        yield return new WaitForSeconds(0.1f);
+        globalVolume2.SetActive(true);
 
         BreakLink.isBroken = true;
         Destroy(ceiling);
