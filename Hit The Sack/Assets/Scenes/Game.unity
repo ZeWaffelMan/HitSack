@@ -4440,7 +4440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &844888992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4765,6 +4765,7 @@ MonoBehaviour:
   isStopped: 0
   stopButton: {fileID: 130982643}
   _shopManager: {fileID: 1636048746}
+  _audioManager: {fileID: 2033142708}
   facesAnim: {fileID: 2138408446}
 --- !u!114 &1004048658
 MonoBehaviour:
@@ -10487,6 +10488,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Turnning
+    clip: {fileID: 8300000, guid: 3a009706816a43847809e1ee21827be3, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &2033142710
 Transform:
   m_ObjectHideFlags: 0
@@ -10832,7 +10839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4989407465123538989, guid: a3fde2a1546f7f143ac591592d8a2284, type: 3}
       propertyPath: clicks
-      value: 10000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4989407465123538989, guid: a3fde2a1546f7f143ac591592d8a2284, type: 3}
       propertyPath: facesAnim

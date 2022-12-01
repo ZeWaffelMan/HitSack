@@ -13,7 +13,9 @@ public class Rotate : MonoBehaviour
     public GameObject stopButton;
 
     public GameObject _shopManager;
+    public GameObject _audioManager;
 
+    AudioManager audioManager;
     Rotate rotate;
     RotateOtherWay rotateOtherWay;
     ShopManager shopManager;
@@ -22,6 +24,7 @@ public class Rotate : MonoBehaviour
 
     private void Awake()
     {
+        audioManager = _audioManager.GetComponent<AudioManager>();
         shopManager = _shopManager.GetComponent<ShopManager>();
         rotateOtherWay = GetComponent<RotateOtherWay>();
         rotate = GetComponent<Rotate>();
@@ -32,6 +35,10 @@ public class Rotate : MonoBehaviour
         // Spin
         if(shopManager.boughtRotate == true)
         {
+            if(_rotation.z == 1)
+            {
+                //audioManager.Play("Turnning");
+            }
             if (canSpinFaster == true && _rotation.z < 200)
             {
                 StartCoroutine(Spin());
@@ -47,6 +54,10 @@ public class Rotate : MonoBehaviour
         if(_rotation.z > 100)
         {
             facesAnim.Play("Dizzy");
+        }
+        if (_rotation.z > 20 && _rotation.z < 100)
+        {
+            facesAnim.Play("Neutral");
         }
         // Stop Spinning
         if (isStopped == true)
