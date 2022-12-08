@@ -6,7 +6,7 @@ public class OpenLink : MonoBehaviour
 {
     public void OpenChannelYoutube()
     {
-        Application.OpenURL("https://www.youtube.com/channel/UC5E1pIHhwNgeTdrBRFFKsfw");
+        Application.OpenURL("https://www.youtube.com/channel/UC9bAZ23ofknYSDHcd-shKjQ");
     }
     public void OpenChannelDiscord()
     {
